@@ -3,6 +3,8 @@
 ## Overview
 This project implements a WebSocket server that assigns temporary usernames to clients upon connection. The server handles client connections, broadcasts messages, and ensures each client has a unique temporary username.
 
+Assumes a small number of connections: < 30. Further optimitisation required for larger user base. 
+
 A solution to the broadcast server project created by roadmapsh https://roadmap.sh/projects/broadcast-server
 
 ## Features
