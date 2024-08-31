@@ -16,19 +16,18 @@ const startClient = () => {
     console.log("Connected to server");
 
     //user input
-    rl.setPrompt("Enter a message:");
+    rl.setPrompt("Enter a message: ");
     rl.prompt();
 
     rl.on("line", (input) => {
       client.send(input);
-      console.log("Message sent");
       rl.prompt();
     });
   });
 
   // from server
   client.on("message", (data) => {
-    console.log("\nReceived from server:", data.toString());
+    console.log("\n", data.toString());
     rl.prompt();
   });
 
@@ -39,7 +38,7 @@ const startClient = () => {
 
   //close connection
   client.on("close", () => {
-    console.log("\nDisconnected.");
+    console.log("\n The server has been closed.");
     // closes the cli
     rl.close();
   });
